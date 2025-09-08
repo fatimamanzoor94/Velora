@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velora - Terms & Conditions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="images/WhatsApp Image 2025-09-06 at 21.23.09_73260859.jpg">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #ff6b6b;
+            --dark: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --mid-gray: #2a2a2a;
+            --light-gray: #3a3a3a;
+            --text: #e0e0e0;
+            --text-light: #a0a0a0;
+            --gold: #d4af37;
+            --nav-footer: #1e1e1e;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+        }
+
+        /* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+    transition: background 0.4s ease;
+    background: var(--nav-footer);
+    backdrop-filter: blur(10px);
+}
+
+nav.scrolled {
+    background: var(--nav-footer);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    height: 290px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+        .nav-links li {
+            margin: 0 1.2rem;
+            position: relative;
+        }
+
+        .nav-links > li > a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+            transition: color 0.3s;
+            font-size: 1.0rem;
+        }
+
+        .nav-links > li > a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links > li > a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links > li > a.active {
+            color: var(--gold);
+        }
+
+        .nav-links > li > a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--dark-gray);
+            min-width: 220px;
+            padding: 1rem 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: none;
+            border: 2px solid var(--gold);
+        }
+
+        .dropdown-content.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            display: block;
+            animation: slideDown 0.3s ease-in-out;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--mid-gray);
+            color: var(--gold);
+            padding-left: 2rem;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        /* Terms Section */
+        .terms-section {
+            padding: 120px 5% 100px;
+            text-align: left;
+            background: var(--dark-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), transparent, rgba(212, 175, 55, 0.1));
+            transform: rotate(45deg);
+            animation: shineYellow 8s infinite;
+            z-index: 0;
+        }
+
+        .terms-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--mid-gray);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .terms-container h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+            position: relative;
+            display: inline-block;
+        }
+
+        .terms-container h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .terms-container h3 {
+            font-size: 1.8rem;
+            margin: 2rem 0 1rem;
+            color: var(--gold);
+        }
+
+        .terms-container p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .terms-container ul {
+            list-style: none;
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+
+        .terms-container ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .terms-container ul li::before {
+            content: '\f111';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-size: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Footer */
+        /* Footer */
+footer {
+    background: var(--nav-footer);
+    color: white;
+    padding: 80px 5% 30px;
+}
+
+.foot-logo-wrapper {
+    max-height: 120px;    
+    overflow: hidden;     
+    display: flex;
+    align-items: center;
+}
+
+.foot-logo {
+    height: auto;
+    max-height: 280px;    
+    width: auto;
+}
+
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--gold);
+        }
+
+        .footer-column p, .footer-column a {
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark-gray);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid var(--mid-gray);
+            color: var(--text-light);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shineYellow {
+            0% {
+                left: -100%;
+            }
+            50% {
+                left: 100%;
+            }
+            100% {
+                left: -100%;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background: var(--nav-footer);
+                flex-direction: column;
+                padding-top: 80px;
+                transition: right 0.3s ease;
+                z-index: 1000;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+                overflow-y: auto;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links > li > a {
+                display: block;
+                padding: 12px 20px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: transparent;
+                padding-left: 20px;
+                display: none;
+                width: 100%;
+                min-width: auto;
+                border: none;
+            }
+
+            .dropdown-content.active {
+                display: block;
+            }
+
+            .terms-container {
+                padding: 30px;
+            }
+
+            .terms-container h2 {
+                font-size: 2.2rem;
+            }
+
+            .terms-container h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+                @media (max-width: 992px) {
+            .nav-links > li > a {
+                color: var(--text) !important;
+            }
+            .nav-links > li > a:hover {
+                color: var(--gold) !important;
+            }
+            .nav-links > li > a::after {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 5%;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .terms-container {
+                padding: 20px;
+            }
+
+            .terms-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .terms-container h3 {
+                font-size: 1.4rem;
+            }
+
+            .terms-container p, .terms-container ul li {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .terms-section {
+                padding: 80px 5% 60px;
+            }
+
+            .terms-container {
+                padding: 15px;
+            }
+
+            .terms-container h2 {
+                font-size: 1.6rem;
+            }
+
+            .terms-container h3 {
+                font-size: 1.2rem;
+            }
+
+            .terms-container p, .terms-container ul li {
+                font-size: 0.9rem;
+            }
+
+            .nav-links {
+                width: 100%;
+                right: -100%;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-gray);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
+            border: 3px solid var(--dark-gray);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f4d03f;
+        }
+
+        /* Firefox scrollbar */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) var(--dark-gray);
+        }
+
+
+
+        /* Chatbot Styles - Enhanced with Responsive Design */
+.chatbot-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    font-family: 'Poppins', sans-serif;
+}
+
+.chatbot-toggle {
+    width: 70px; /* Increased from 60px */
+    height: 70px; /* Increased from 60px */
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--gold), #f4d03f);
+    color: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.chatbot-toggle i {
+    font-size: 1.8rem; /* Increased icon size */
+}
+
+.chatbot-toggle:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+.chatbot-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--dark);
+    color: white;
+    font-size: 0.85rem; /* Increased from 0.75rem */
+    width: 24px; /* Increased from 20px */
+    height: 24px; /* Increased from 20px */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.chatbot-window {
+    width: 380px; /* Increased from 350px */
+    height: 520px; /* Increased from 500px */
+    background: var(--dark-gray);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+    margin-top: 15px;
+    position: absolute;
+    bottom: 85px; /* Increased from 75px */
+    right: 0;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chatbot-header {
+    background: var(--mid-gray);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.chatbot-header h3 {
+    color: var(--gold);
+    font-size: 1.2rem; /* Increased from 1.1rem */
+    margin: 0;
+    font-family: 'Cinzel', serif;
+}
+
+.chatbot-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.chatbot-controls i {
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s;
+    font-size: 1.1rem; /* Increased from 0.9rem */
+}
+
+.chatbot-controls i:hover {
+    color: var(--gold);
+}
+
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    display: flex;
+    gap: 12px;
+    max-width: 85%;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bot-message {
+    align-self: flex-start;
+}
+
+.user-message {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.message-avatar {
+    width: 40px; /* Increased from 36px */
+    height: 40px; /* Increased from 36px */
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark);
+    font-size: 1rem; /* Increased from 0.9rem */
+    flex-shrink: 0;
+}
+
+.user-message .message-avatar {
+    background: var(--gold);
+}
+
+.message-content {
+    background: var(--mid-gray);
+    padding: 14px 18px; /* Increased from 12px 16px */
+    border-radius: 18px;
+    color: var(--text);
+    font-size: 1rem; /* Increased from 0.95rem */
+    line-height: 1.4;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bot-message .message-content {
+    border-bottom-left-radius: 5px;
+}
+
+.user-message .message-content {
+    border-bottom-right-radius: 5px;
+    color: var(--dark);
+    background-color: var(--gold);
+}
+
+.chatbot-input {
+    display: flex;
+    padding: 15px;
+    background: var(--dark-gray);
+    border-top: 1px solid var(--light-gray);
+}
+
+.chatbot-input input {
+    flex: 1;
+    padding: 14px 18px; /* Increased from 12px 15px */
+    border: 2px solid var(--light-gray);
+    border-radius: 25px;
+    background: var(--dark);
+    color: var(--text);
+    font-size: 1rem; /* Increased from 0.95rem */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.chatbot-input input:focus {
+    border-color: var(--gold);
+}
+
+.chatbot-input button {
+    width: 50px; /* Increased from 45px */
+    height: 50px; /* Increased from 45px */
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--gold), #f4d03f);
+    color: var(--dark);
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+}
+
+.chatbot-input button i {
+    font-size: 1.2rem; /* Increased send button icon size */
+}
+
+.chatbot-input button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Responsive Design for Chatbot */
+/* For tablets and small desktops */
+@media (max-width: 992px) {
+    .chatbot-container {
+        bottom: 25px;
+        right: 25px;
+    }
+    
+    .chatbot-window {
+        width: 340px;
+        height: 480px;
+        bottom: 80px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+}
+
+/* For large mobile phones and small tablets */
+@media (max-width: 768px) {
+    .chatbot-container {
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .chatbot-toggle {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .chatbot-toggle i {
+        font-size: 1.6rem;
+    }
+    
+    .chatbot-window {
+        width: 320px;
+        height: 470px;
+        bottom: 75px;
+    }
+    
+    .chatbot-header {
+        padding: 12px 15px;
+    }
+    
+    .chatbot-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .chatbot-controls i {
+        font-size: 1rem;
+    }
+    
+    .chatbot-messages {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .message {
+        max-width: 90%;
+    }
+    
+    .message-content {
+        font-size: 0.95rem;
+        padding: 12px 15px;
+    }
+    
+    .message-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+    
+    .chatbot-input {
+        padding: 12px;
+    }
+    
+    .chatbot-input input {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .chatbot-input button {
+        width: 45px;
+        height: 45px;
+        margin-left: 8px;
+    }
+    
+    .chatbot-input button i {
+        font-size: 1.1rem;
+    }
+}
+
+/* For Surface Duo and similar devices (540px width) */
+@media (max-width: 540px) {
+    .chatbot-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .chatbot-toggle {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .chatbot-toggle i {
+        font-size: 1.5rem;
+    }
+    
+    .chatbot-window {
+        width: 85%;
+        max-width: 340px;
+        height: 450px;
+        bottom: 70px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    .chatbot-header h3 {
+        font-size: 1rem;
+    }
+    
+    .chatbot-controls i {
+        font-size: 0.9rem;
+    }
+    
+    .message-content {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+        line-height: 1.3;
+    }
+    
+    .message-avatar {
+        width: 34px;
+        height: 34px;
+    }
+    
+    .chatbot-input input {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .chatbot-input button {
+        width: 42px;
+        height: 42px;
+    }
+    
+    .chatbot-input button i {
+        font-size: 1rem;
+    }
+}
+
+/* For medium mobile phones */
+@media (max-width: 480px) {
+    .chatbot-container {
+        bottom: 15px;
+        right: 15px;
+        left: 15px;
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .chatbot-toggle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .chatbot-toggle i {
+        font-size: 1.4rem;
+    }
+    
+    .chatbot-window {
+        width: 90%;
+        max-width: 320px;
+        height: 420px;
+        bottom: 65px;
+        right: 50%;
+    }
+    
+    .chatbot-header {
+        padding: 12px 15px;
+    }
+    
+    .chatbot-header h3 {
+        font-size: 0.95rem;
+    }
+    
+    .chatbot-messages {
+        padding: 12px;
+        gap: 10px;
+    }
+    
+    .message {
+        max-width: 95%;
+        gap: 8px;
+    }
+    
+    .message-content {
+        font-size: 0.85rem;
+        padding: 9px 12px;
+        line-height: 1.3;
+    }
+    
+    .message-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+    }
+    
+    .chatbot-input {
+        padding: 12px;
+    }
+    
+    .chatbot-input input {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .chatbot-input button {
+        width: 40px;
+        height: 40px;
+        margin-left: 8px;
+    }
+    
+    .chatbot-input button i {
+        font-size: 0.95rem;
+    }
+}
+
+/* For small mobile phones */
+@media (max-width: 380px) {
+    .chatbot-container {
+        bottom: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .chatbot-toggle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .chatbot-toggle i {
+        font-size: 1.3rem;
+    }
+    
+    .chatbot-window {
+        width: 95%;
+        max-width: 300px;
+        height: 400px;
+        bottom: 60px;
+    }
+    
+    .chatbot-header {
+        padding: 10px 12px;
+    }
+    
+    .chatbot-header h3 {
+        font-size: 0.9rem;
+    }
+    
+    .chatbot-controls i {
+        font-size: 0.85rem;
+    }
+    
+    .chatbot-messages {
+        padding: 10px;
+        gap: 8px;
+    }
+    
+    .message-content {
+        font-size: 0.8rem;
+        padding: 8px 11px;
+    }
+    
+    .message-avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .chatbot-input {
+        padding: 10px;
+    }
+    
+    .chatbot-input input {
+        padding: 9px 11px;
+        font-size: 0.8rem;
+    }
+    
+    .chatbot-input button {
+        width: 38px;
+        height: 38px;
+        margin-left: 8px;
+    }
+    
+    .chatbot-input button i {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape orientation adjustments */
+@media (max-height: 600px) and (orientation: landscape) {
+    .chatbot-window {
+        height: 380px;
+        bottom: 70px;
+    }
+    
+    .chatbot-messages {
+        padding: 12px;
+    }
+    
+    .message-content {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .chatbot-container {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .chatbot-toggle {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .chatbot-toggle i {
+        font-size: 1.3rem;
+    }
+    
+    .chatbot-window {
+        height: 320px;
+        bottom: 60px;
+    }
+    
+    .chatbot-header {
+        padding: 8px 12px;
+    }
+    
+    .chatbot-header h3 {
+        font-size: 0.9rem;
+    }
+    
+    .chatbot-controls i {
+        font-size: 0.85rem;
+    }
+    
+    .chatbot-messages {
+        padding: 8px;
+        gap: 8px;
+    }
+    
+    .message-content {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+        line-height: 1.2;
+    }
+    
+    .message-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    
+    .chatbot-input {
+        padding: 8px;
+    }
+    
+    .chatbot-input input {
+        padding: 7px 10px;
+        font-size: 0.85rem;
+    }
+    
+    .chatbot-input button {
+        width: 36px;
+        height: 36px;
+        margin-left: 6px;
+    }
+    
+    .chatbot-input button i {
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (width: 540px) and (height: 720px) {
+    .chatbot-container {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .chatbot-toggle {
+        width: 60px;
+        height: 60px;
+    }
+
+    .chatbot-toggle i {
+        font-size: 1.6rem;
+    }
+
+    .chatbot-window {
+        width: 360px;
+        height: 480px;
+        bottom: 80px;
+        left: 50%;           
+        transform: translateX(-90%); 
+    }
+
+    .chatbot-header {
+        padding: 14px 18px;
+    }
+
+    .chatbot-header h3 {
+        font-size: 1.1rem;
+    }
+
+    .chatbot-controls i {
+        font-size: 1rem;
+    }
+
+    .message-content {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+
+    .message-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .chatbot-input input {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+    }
+
+    .chatbot-input button {
+        width: 44px;
+        height: 44px;
+    }
+
+    .chatbot-input button i {
+        font-size: 1.1rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+     <!-- Navigation -->
+    <nav id="navbar">
+<a style="text-decoration: none;" href="index.html"><div class="logo"><img src="images/WhatsApp_Image_2025-09-07_at_02.57.13_eecce6e0-removebg-preview.png" alt="Velora Logo" class="logo"></div></a>        
+        <button class="mobile-menu-btn" id="menuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+                <a href="product.html" class="dropdown-toggle">Products</i></a>
+                <div class="dropdown-content">
+                    <a href="product.html">Furniture</a>
+                    <a href="product.html">Lighting</a>
+                    <a href="product.html">Decor</a>
+                    <a href="product.html">Textiles</a>
+                    <a href="product.html">Outdoor</a>
+                </div>
+            </li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="quiz.html">Style Quiz</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <!-- Chatbot Widget -->
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+        <!-- <span class="chatbot-badge" id="chatbotBadge">1</span> -->
+    </div>
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>Velora Assistant</h3>
+            <div class="chatbot-controls">
+                <i class="fas fa-minus minimize-btn" id="minimizeBtn"></i>
+                <i class="fas fa-times close-btn" id="closeBtn"></i>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    Hello! I'm your Velora design assistant. How can I help you today? You can ask me about our services, products, or design styles.
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="userInput" placeholder="Type your question here..." autocomplete="off">
+            <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Terms and Conditions Section -->
+    <section class="terms-section">
+        <div class="terms-container" data-aos="fade-up" data-aos-duration="1000">
+            <h2>Terms & Conditions</h2>
+            <p>Welcome to Velora Interior Design. By accessing or using our website and services, you agree to be bound by the following terms and conditions. Please read them carefully.</p>
+            
+            <h3>1. General Terms</h3>
+            <p>These Terms and Conditions govern your use of our website and any services or products provided by Velora. By using our website, you accept these terms in full. If you disagree with any part of these terms, please do not use our website or services.</p>
+            
+            <h3>2. Products and Services</h3>
+            <ul>
+                <li>All product descriptions, images, and prices are subject to change without prior notice.</li>
+                <li>We strive to ensure that all product information is accurate, but we are not responsible for typographical errors or inaccuracies.</li>
+                <li>Custom orders are subject to specific terms outlined at the time of purchase.</li>
+            </ul>
+            
+            <h3>3. Payment and Pricing</h3>
+            <p>All prices are listed in US dollars and are exclusive of taxes, shipping, and handling fees unless otherwise stated. Payment must be made in full at the time of purchase. We accept major credit cards and other payment methods as specified on our website.</p>
+            
+            <h3>4. Shipping and Delivery</h3>
+            <ul>
+                <li>Shipping times and costs vary depending on the product and destination.</li>
+                <li>Velora is not responsible for delays caused by third-party shipping services.</li>
+                <li>Risk of loss and title for items purchased pass to you upon delivery to the carrier.</li>
+            </ul>
+            
+            <h3>5. Returns and Refunds</h3>
+            <p>We offer a 30-day return policy for most products, subject to the following conditions:</p>
+            <ul>
+                <li>Items must be returned in their original condition, unused, and with all original packaging.</li>
+                <li>Custom orders and clearance items are non-returnable unless defective.</li>
+                <li>Return shipping costs are the responsibility of the customer unless the item is defective.</li>
+            </ul>
+            
+            <h3>6. Intellectual Property</h3>
+            <p>All content on this website, including images, designs, and text, is the property of Velora or its licensors and is protected by copyright and other intellectual property laws. You may not reproduce, distribute, or use any content without prior written permission.</p>
+            
+            <h3>7. Limitation of Liability</h3>
+            <p>Velora shall not be liable for any indirect, incidental, or consequential damages arising from the use of our website or products. Our liability is limited to the amount paid for the product or service.</p>
+            
+            <h3>8. Governing Law</h3>
+            <p>These terms are governed by the laws of the State of New York. Any disputes arising from these terms will be resolved in the courts of New York.</p>
+            
+            <h3>9. Changes to Terms</h3>
+            <p>We reserve the right to update or modify these Terms and Conditions at any time without prior notice. Your continued use of the website after changes constitutes acceptance of the new terms.</p>
+            
+            <h3>10. Contact Us</h3>
+            <p>If you have any questions about these Terms and Conditions, please contact us at:</p>
+            <ul>
+                <li>Email: info@velora.com</li>
+                <li>Phone: +1 (555) 123-4567</li>
+                <li>Address: 123 Design Street, New York, NY</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                 <div class="foot-logo-wrapper">
+                    <img src="images/WhatsApp_Image_2025-09-07_at_02.57.13_eecce6e0-removebg-preview.png" alt="Logo" class="foot-logo">
+                </div>
+
+                <p>Transforming spaces with innovative design solutions and premium quality products.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.pinterest.com/"><i class="fab fa-pinterest"></i></a>
+                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="products.html">Products</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="quiz.html">Style Quiz</a>
+            </div>
+            <div class="footer-column">
+                <h3>Company</h3>
+                <a href="about.html">About Us</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="contact.html">Contact</a>
+                <a href="terms.html">Terms & Conditions</a>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Design Street, New York, NY</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@velora.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Velora Interior Design. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init();
+
+        // Navigation functionality
+        const navbar = document.getElementById('navbar');
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active') && 
+                !navLinks.contains(e.target) && 
+                !menuBtn.contains(e.target)) {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Dropdown click handling
+        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                const dropdown = toggle.parentElement;
+                const dropdownContent = dropdown.querySelector('.dropdown-content');
+                const isActive = dropdownContent.classList.contains('active');
+
+                // Close all dropdowns
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+
+                // Toggle the clicked dropdown
+                if (!isActive) {
+                    dropdownContent.classList.add('active');
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+            }
+        });
+
+
+
+
+
+
+
+
+
+         // Chatbot Functionality - Enhanced Version
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const minimizeBtn = document.getElementById('minimizeBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const userInput = document.getElementById('userInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotBadge = document.getElementById('chatbotBadge');
+        
+        let isMinimized = false;
+        let unreadMessages = 0;
+        
+        // Toggle chatbot window
+        chatbotToggle.addEventListener('click', function() {
+            if (chatbotWindow.style.display === 'flex') {
+                chatbotWindow.style.display = 'none';
+            } else {
+                chatbotWindow.style.display = 'flex';
+                isMinimized = false;
+                chatbotBadge.style.display = 'none';
+                unreadMessages = 0;
+            }
+        });
+        
+        // Minimize chatbot window
+        minimizeBtn.addEventListener('click', function() {
+            isMinimized = true;
+            chatbotWindow.style.display = 'none';
+        });
+        
+        // Close chatbot window
+        closeBtn.addEventListener('click', function() {
+            chatbotWindow.style.display = 'none';
+        });
+        
+        // Send message function
+        function sendMessage() {
+            const message = userInput.value.trim();
+            if (message === '') return;
+            
+            // Add user message
+            addMessage(message, 'user');
+            userInput.value = '';
+            
+            // Show typing indicator
+            showTypingIndicator();
+            
+            // Simulate bot response after a short delay
+            setTimeout(() => {
+                hideTypingIndicator();
+                getBotResponse(message);
+            }, 1200);
+        }
+        
+        // Show typing indicator
+        function showTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot-message typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            `;
+            chatbotMessages.appendChild(typingDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+        
+        // Hide typing indicator
+        function hideTypingIndicator() {
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+        
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            
+            const avatarDiv = document.createElement('div');
+            avatarDiv.className = 'message-avatar';
+            
+            if (sender === 'bot') {
+                avatarDiv.innerHTML = '<i class="fas fa-robot"></i>';
+            } else {
+                avatarDiv.innerHTML = '<i class="fas fa-user"></i>';
+            }
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.textContent = text;
+            
+            messageDiv.appendChild(avatarDiv);
+            messageDiv.appendChild(contentDiv);
+            chatbotMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            
+            // If window is minimized, increment unread messages
+            if (isMinimized) {
+                unreadMessages++;
+                chatbotBadge.textContent = unreadMessages > 9 ? '9+' : unreadMessages;
+                chatbotBadge.style.display = 'flex';
+            }
+        }
+        
+        // Get bot response based on user message
+        function getBotResponse(userMessage) {
+            userMessage = userMessage.toLowerCase();
+            let response = '';
+            
+            // Greetings
+            if (userMessage.includes('hello') || userMessage.includes('hi') || userMessage.includes('hey') || userMessage.includes('greetings')) {
+                response = "Hello! I'm VeloraBot, your personal interior design assistant. I'm here to help you with any questions about our services, products, or design styles. What would you like to know?";
+            }
+            // Services
+            else if (userMessage.includes('service') || userMessage.includes('services') || userMessage.includes('what you offer') || userMessage.includes('offerings')) {
+                response = "At Velora, we offer premium interior design services including:\n\n• Complete Interior Design\n• Furniture Selection & Placement\n• Color Consultation & Mood Boards\n• Space Planning & Optimization\n• Lighting Design\n• Decor & Accessory Curation\n\nWould you like more details about any specific service?";
+            }
+            // Products
+            else if (userMessage.includes('product') || userMessage.includes('products') || userMessage.includes('items') || userMessage.includes('catalog')) {
+                response = "We feature a curated collection of premium interior design products including:\n\n• Modern Velvet Sofas\n• Minimalist Dining Tables\n• Elegant Lighting Fixtures\n• Luxury Wall Art & Decor\n• Premium Textiles & Rugs\n• Outdoor Furniture\n\nYou can explore all our featured products in the Products section of our website.";
+            }
+            // Pricing
+            else if (userMessage.includes('price') || userMessage.includes('cost') || userMessage.includes('pricing') || userMessage.includes('how much') || userMessage.includes('expensive') || userMessage.includes('budget')) {
+                response = "Our pricing is customized based on your specific project needs. We offer:\n\n• Free initial consultation\n• Project-based pricing for complete designs\n• Hourly rates for specific consultations\n• Product pricing varies by item (see Products section)\n\nWould you like to book a consultation to discuss your budget and get a personalized quote?";
+            }
+            // Booking/Consultation
+            else if (userMessage.includes('book') || userMessage.includes('consult') || userMessage.includes('appointment') || userMessage.includes('schedule') || userMessage.includes('meeting')) {
+                response = "Great! You can book a consultation in several ways:\n\n1. Click the 'Book Consultation' button on our homepage\n2. Visit our Contact page to fill out a form\n3. Call us at +1 (555) 123-4567\n4. Email us at info@velora.com\n\nOur business hours are Mon-Fri: 9AM-6PM. What type of consultation are you interested in?";
+            }
+            // Style Quiz
+            else if (userMessage.includes('design style') || userMessage.includes('quiz') || userMessage.includes('test') || userMessage.includes('personality') || userMessage.includes('which style') || userMessage.includes('find my style')) {
+                response = "Our Style Quiz is a fun and insightful way to discover which interior design style best matches your personality! We cover styles like:\n\n• Modern & Minimalist\n• Scandinavian\n• Luxury & Glam\n• Rustic & Natural\n\nTake the quiz now by clicking 'Style Quiz' in the navigation menu. Would you like me to explain any of these styles in more detail?";
+            }
+            // Thank you
+            else if (userMessage.includes('thank') || userMessage.includes('thanks') || userMessage.includes('appreciate')) {
+                response = "You're very welcome! I'm here 24/7 to help with any other questions you might have about creating your perfect space. Is there anything else I can assist you with today?";
+            }
+            // Contact information
+            else if (userMessage.includes('contact') || userMessage.includes('phone') || userMessage.includes('email') || userMessage.includes('address') || userMessage.includes('location') || userMessage.includes('reach')) {
+                response = "You can reach Velora through multiple channels:\n\n📍 Address: 123 Design Street, New York, NY\n📞 Phone: +1 (555) 123-4567\n✉️ Email: info@velora.com\n🕒 Hours: Mon-Fri: 9AM-6PM\n\nYou can also visit our Contact page for a contact form, or connect with us on social media via the links in our footer.";
+            }
+            // Gallery/Portfolio
+            else if (userMessage.includes('gallery') || userMessage.includes('portfolio') || userMessage.includes('examples') || userMessage.includes('showcase') || userMessage.includes('previous work') || userMessage.includes('projects')) {
+                response = "Our Gallery showcases stunning projects across various design styles including modern, minimalist, luxury, and rustic designs. You'll find:\n\n• Complete room transformations\n• Before & after comparisons\n• Client testimonials\n• Design process highlights\n\nVisit the Gallery section to get inspired by our previous work and see what we can create for you!";
+            }
+            // About Us
+            else if (userMessage.includes('about') || userMessage.includes('company') || userMessage.includes('who are you') || userMessage.includes('mission') || userMessage.includes('story') || userMessage.includes('background')) {
+                response = "Velora is a premium interior design company dedicated to transforming spaces with innovative design solutions and premium quality products. Our team of expert designers works closely with clients to create spaces that reflect their personality and lifestyle. We believe every space tells a story, and we're here to help you tell yours beautifully.";
+            }
+            // Design styles (detailed)
+            else if (userMessage.includes('modern') || userMessage.includes('minimalist') || userMessage.includes('scandinavian') || userMessage.includes('luxury') || userMessage.includes('glam') || user_message.includes('rustic') || userMessage.includes('natural')) {
+                if (userMessage.includes('modern') || userMessage.includes('minimalist')) {
+                    response = "Modern & Minimalist style focuses on clean lines, functional furniture, and a 'less is more' philosophy. It typically features:\n\n• Neutral color palettes\n• Simple geometric forms\n• Open, uncluttered spaces\n• High-quality materials\n• Strategic use of negative space\n\nThis style creates calm, serene environments perfect for urban living.";
+                }
+                else if (userMessage.includes('scandinavian')) {
+                    response = "Scandinavian design emphasizes functionality, simplicity, and connection with nature. Key features include:\n\n• Light, airy color schemes (whites, grays)\n• Natural materials (wood, wool, leather)\n• Cozy textiles and layers\n• Functional, beautiful furniture\n• Emphasis on natural light\n\nThis style creates warm, inviting spaces that feel both modern and timeless.";
+                }
+                else if (userMessage.includes('luxury') || userMessage.includes('glam')) {
+                    response = "Luxury & Glam style is all about opulence, drama, and sophistication. Characteristics include:\n\n• Rich colors (deep blues, emerald greens, golds)\n• Luxurious materials (velvet, silk, marble)\n• Statement lighting and mirrors\n• Metallic accents and crystal details\n• Bold patterns and textures\n\nThis style creates glamorous, statement-making spaces that exude elegance.";
+                }
+                else if (userMessage.includes('rustic') || userMessage.includes('natural')) {
+                    response = "Rustic & Natural style celebrates the beauty of imperfection and connection to nature. It features:\n\n• Natural, raw materials (reclaimed wood, stone)\n• Earthy color palettes\n• Handcrafted and vintage elements\n• Textural layers (woven baskets, chunky knits)\n• Organic shapes and forms\n\nThis style creates warm, grounded spaces that feel authentic and comforting.";
+                }
+            }
+            // Design tips and advice
+            else if (userMessage.includes('tip') || userMessage.includes('advice') || userMessage.includes('help') || userMessage.includes('suggest') || userMessage.includes('recommend') || userMessage.includes('idea')) {
+                response = "Here are some top interior design tips from our experts:\n\n1. Start with a focal point in each room\n2. Use the 60-30-10 color rule (60% dominant, 30% secondary, 10% accent)\n3. Layer lighting (ambient, task, accent)\n4. Don't forget about scale and proportion\n5. Mix textures for visual interest\n6. Use mirrors to enhance natural light\n7. Invest in quality key pieces\n\nWould you like specific advice for a particular room or design challenge?";
+            }
+            // Feedback
+            else if (userMessage.includes('feedback') || userMessage.includes('review') || userMessage.includes('testimonial') || userMessage.includes('opinion') || userMessage.includes('rating')) {
+                response = "We value your feedback! You can:\n\n• Submit feedback through our Feedback page\n• Leave a review on our social media platforms\n• Email us directly at info@velora.com\n\nYour input helps us improve our services and better serve our clients. Is there something specific you'd like to share feedback about?";
+            }
+            // Social media
+            else if (userMessage.includes('social') || userMessage.includes('facebook') || userMessage.includes('instagram') || userMessage.includes('pinterest') || userMessage.includes('youtube') || userMessage.includes('media')) {
+                response = "Follow us on social media for daily inspiration, behind-the-scenes content, and design tips:\n\n• Facebook: /veloradesign\n• Instagram: @veloradesign\n• Pinterest: /veloradesign\n• YouTube: /veloradesign\n\nYou'll find our social media links in the footer of our website. What platform do you prefer?";
+            }
+            // Hours of operation
+            else if (userMessage.includes('hours') || userMessage.includes('open') || userMessage.includes('available') || userMessage.includes('time')) {
+                response = "Our business hours are:\n\nMonday - Friday: 9:00 AM - 6:00 PM\nSaturday: 10:00 AM - 4:00 PM (by appointment only)\nSunday: Closed\n\nOur chatbot is available 24/7 to answer your questions, and you can book consultations or send inquiries at any time through our website.";
+            }
+            // Delivery/Shipping
+            else if (userMessage.includes('delivery') || userMessage.includes('shipping') || userMessage.includes('arrive') || userMessage.includes('transport') || userMessage.includes('when will')) {
+                response = "For product deliveries:\n\n• Standard shipping: 5-7 business days\n• Express shipping: 2-3 business days (additional fee)\n• Local pickup: Available at our New York showroom\n• White-glove delivery: Available for furniture (assembly & placement)\n\nDelivery times may vary based on product availability and location. Would you like information about a specific product's delivery options?";
+            }
+            // Returns/Exchanges
+            else if (userMessage.includes('return') || userMessage.includes('exchange') || userMessage.includes('refund') || userMessage.includes('policy') || userMessage.includes('cancel')) {
+                response = "Our return policy:\n\n• 30-day return window for most products\n• Items must be in original condition with packaging\n• Custom/final sale items are not eligible for return\n• Return shipping costs are the customer's responsibility\n• Refunds processed within 5-7 business days after receipt\n\nPlease contact our customer service team for return authorization before sending items back.";
+            }
+            // Help with website navigation
+            else if (userMessage.includes('navigate') || userMessage.includes('find') || userMessage.includes('where is') || userMessage.includes('how to') || userMessage.includes('website') || userMessage.includes('browse')) {
+                response = "I can help you navigate our website:\n\n• Home: Overview of our services and featured products\n• Design Styles: Browse by room type or style\n• Products: Shop our curated collection\n• Gallery: View our portfolio of completed projects\n• About Us: Learn about our company and team\n• Style Quiz: Discover your perfect design style\n• Contact: Get in touch with us\n\nWhich section would you like to explore?";
+            }
+            // General help
+            else if (userMessage.includes('help') || userMessage.includes('assist') || userMessage.includes('support') || userMessage.includes('what can you do')) {
+                response = "I can help you with:\n\n• Information about our services and products\n• Pricing and booking consultations\n• Design style recommendations\n• Website navigation\n• Contact information\n• Business hours and policies\n• Design tips and advice\n\nJust ask me anything about interior design or our company, and I'll do my best to assist you!";
+            }
+            // Fallback response
+            else {
+                response = "I understand you're asking about '" + userMessage + "'. While I'm continuously learning, I can definitely help you with information about our interior design services, products, booking consultations, or directing you to specific sections of our website. Could you rephrase your question or ask about one of these topics?";
+            }
+            
+            addMessage(response, 'bot');
+        }
+        
+        // Event listeners for sending messages
+        sendBtn.addEventListener('click', sendMessage);
+        
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+        
+        // Show welcome message after 5 seconds
+        setTimeout(() => {
+            if (!isMinimized && chatbotWindow.style.display !== 'flex') {
+                unreadMessages = 1;
+                chatbotBadge.style.display = 'flex';
+            }
+        }, 5000);
+        
+        // Add CSS for typing indicator
+        const style = document.createElement('style');
+        style.textContent = `
+            .typing-dots {
+                display: flex;
+                gap: 4px;
+                align-items: center;
+                height: 20px;
+            }
+            .typing-dots span {
+                width: 8px;
+                height: 8px;
+                background: var(--gold);
+                border-radius: 50%;
+                display: inline-block;
+                animation: typingAnimation 1.4s infinite ease-in-out;
+            }
+            .typing-dots span:nth-child(1) {
+                animation-delay: 0s;
+            }
+            .typing-dots span:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            .typing-dots span:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+            @keyframes typingAnimation {
+                0%, 60%, 100% {
+                    transform: translateY(0);
+                    opacity: 0.6;
+                }
+                30% {
+                    transform: translateY(-10px);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    });
+
+
+
+    </script>
+</body>
+</html>
+
