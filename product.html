@@ -521,13 +521,13 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
     margin-bottom: 40px;
-    font-weight:700 ;
 }
 
         .footer-column h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
             color: var(--gold);
+            font-weight:700 ;
         }
         
         .footer-column p, .footer-column a {
@@ -1467,6 +1467,74 @@ footer {
 #mobileCartCount {
     background-color: #22c55e !important; /* Tailwind's bg-green-500 */
 }
+/* Existing modal padding and general styling */
+#wishlistModal .p-4.md\:p-6,
+#cartModal .p-4.md\:p-6 {
+    padding: 1.5rem;
+}
+
+/* Table row spacing for all screens */
+#wishlistModal table tbody tr,
+#cartModal table tbody tr {
+    border-bottom-width: 1px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+/* Specific adjustments for screens up to 768px */
+@media (max-width: 768px) {
+    #wishlistModal,
+    #cartModal {
+        padding: 1rem; /* Reduce overall modal padding on small screens */
+    }
+
+    #wishlistModal table,
+    #cartModal table {
+        width: 100%; /* Ensure table takes full width */
+        display: block; /* Convert table to block for better mobile layout */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+    }
+
+    #wishlistModal table tbody,
+    #cartModal table tbody {
+        display: block; /* Ensure tbody is block-level */
+    }
+
+    #wishlistModal table tbody tr,
+    #cartModal table tbody tr {
+        display: flex; /* Use flex for better control on small screens */
+        flex-direction: column; /* Stack items vertically */
+        padding: 0.5rem 0; /* Adjust padding for small screens */
+        border-bottom: 1px solid var(--gold); /* Maintain border */
+    }
+
+    #wishlistModal td,
+    #cartModal td {
+        padding: 0.5rem; /* Uniform padding for all cells */
+        width: 100%; /* Full width for each cell */
+        display: block; /* Stack cells vertically */
+    }
+
+    #wishlistModal td:nth-child(2),
+    #cartModal td:nth-child(2),
+    #cartModal td:nth-child(4) {
+        padding-right: 0; /* Remove extra right padding */
+        padding-left: 0; /* Remove extra left padding */
+        margin-top: 0.5rem; /* Add top margin to separate price */
+        font-size: 1rem; /* Ensure readable font size */
+    }
+
+    #wishlistModal .mt-6,
+    #cartModal .mt-6 {
+        margin-top: 1rem; /* Reduce margin for total section on small screens */
+    }
+
+    /* Ensure price and actions don’t stick together */
+    #wishlistModal td:last-child,
+    #cartModal td:last-child {
+        margin-top: 0.5rem; /* Extra space before actions */
+    }
+}
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100" style="background-color: var(--dark); color: var(--text);">
@@ -1553,12 +1621,6 @@ footer {
                         <i class="fas fa-times text-xl" style="color: var(--text);"></i>
                     </button>
                 </div>
-                <nav class="space-y-4">
-                    <a href="#" class="block py-2 hover:text-yellow-400 transition" style="color: var(--text);">Home</a>
-                    <a href="#products" class="block py-2 hover:text-yellow-400 transition" style="color: var(--text);">Products</a>
-                    <a href="#" class="block py-2 hover:text-yellow-400 transition" style="color: var(--text);">About</a>
-                    <a href="#" class="block py-2 hover:text-yellow-400 transition" style="color: var(--text);">Contact</a>
-                </nav>
             </div>
         </div>
     </header>
@@ -2525,6 +2587,16 @@ footer {
             }
             updateWishlistCount();
             renderProducts();
+
+            // Update the wishlist button in the product modal if it's open
+            const productModal = document.getElementById('productModal');
+            if (!productModal.classList.contains('hidden')) {
+                const modalWishlistBtn = productModal.querySelector('.heart-animation');
+                if (modalWishlistBtn) {
+                    const isInWishlist = wishlist.some(item => item.id === productId);
+                    modalWishlistBtn.classList.toggle('active', isInWishlist);
+                }
+            }
         }
         
         // Update wishlist count
@@ -2661,87 +2733,96 @@ modalContent.innerHTML = `
             document.getElementById('productModal').classList.add('hidden');
         }
         
-        // Open wishlist modal
-        function openWishlistModal() {
-            const wishlistContent = document.getElementById('wishlistContent');
-            if (wishlist.length === 0) {
-                wishlistContent.innerHTML = `
-                    <div class="text-center py-12">
-                        <i class="fas fa-heart text-5xl mb-4" style="color: var(--gold);"></i>
-                        <h4 class="text-xl font-medium mb-2" style="color: var(--text);">Your wishlist is empty</h4>
-                        <p style="color: var(--text);">Add products to your wishlist to see them here</p>
-                        <button class="mt-4 px-6 py-2 rounded-lg transition" onclick="closeWishlistModal()" style="background-color: var(--gold); color: var(--dark);">
-                            Continue Shopping
-                        </button>
-                    </div>
-                `;
-            } else {
-                let wishlistHTML = `
-                    <div class="overflow-x-auto">
-                        <table class="w-full">
-                            <thead>
-                                <tr style="border-bottom-color: var(--gold);">
-                                    <th class="text-left py-3 px-4" style="color: var(--text);">Product</th>
-                                    <th class="text-left py-3 px-4" style="color: var(--text);">Price</th>
-                                    <th class="text-left py-3 px-4" style="color: var(--text);">Rating</th>
-                                    <th class="text-left py-3 px-4" style="color: var(--text);">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                `;
-                wishlist.forEach(product => {
-                    wishlistHTML += `
+// Open wishlist modal
+function openWishlistModal() {
+    const wishlistContent = document.getElementById('wishlistContent');
+    if (wishlist.length === 0) {
+        wishlistContent.innerHTML = `
+            <div class="text-center py-12">
+                <i class="fas fa-heart text-5xl mb-4" style="color: var(--gold);"></i>
+                <h4 class="text-xl font-medium mb-2" style="color: var(--text);">Your wishlist is empty</h4>
+                <p style="color: var(--text);">Add products to your wishlist to see them here</p>
+                <button class="mt-4 px-6 py-2 rounded-lg transition" onclick="closeWishlistModal()" style="background-color: var(--gold); color: var(--dark);">
+                    Continue Shopping
+                </button>
+            </div>
+        `;
+    } else {
+        let wishlistHTML = `
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead>
                         <tr style="border-bottom-color: var(--gold);">
-                            <td class="py-3 px-4">
-                                <div class="flex items-center">
-                                    <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded mr-4">
-                                    <div>
-                                        <div class="font-medium" style="color: var(--text);">${product.name}</div>
-                                        <div class="text-sm" style="color: var(--text);">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4 font-bold" style="color: var(--gold);">$${product.price}</td>
-                            <td class="py-3 px-4">
-                                <div class="flex items-center">
-                                    <div class="flex mr-2">
-                                        ${generateStars(product.rating)}
-                                    </div>
-                                    <span class="text-sm" style="color: var(--text);">(${product.reviews})</span>
-                                </div>
-                            </td>
-                            <td class="py-3 px-4">
-                                <div class="flex space-x-2">
-                                    <button class="px-3 py-1 rounded text-sm transition" style="background-color: var(--gold); color: var(--dark);"
-                                            onclick="openProductModal(${product.id}); closeWishlistModal();">
-                                        View
-                                    </button>
-                                    <button class="px-3 py-1 rounded text-sm transition" style="background-color: var(--gold); color: var(--dark);"
-                                            onclick="toggleWishlist(${product.id})">
-                                        Remove
-                                    </button>
-                                </div>
-                            </td>
+                            <th class="text-left py-3 px-4" style="color: var(--text);">Product</th>
+                            <th class="text-left py-3 px-4" style="color: var(--text);">Price</th>
+                            <th class="text-left py-3 px-4" style="color: var(--text);">Rating</th>
+                            <th class="text-left py-3 px-4" style="color: var(--text);">Actions</th>
                         </tr>
-                    `;
-                });
-                wishlistHTML += `
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="mt-6 flex justify-between items-center">
-                        <div class="text-lg" style="color: var(--text);">
-                            Total: <span class="font-bold">$${wishlist.reduce((sum, product) => sum + product.price, 0)}</span>
+                    </thead>
+                    <tbody>
+        `;
+        wishlist.forEach(product => {
+            wishlistHTML += `
+                <tr style="border-bottom-color: var(--gold);">
+                    <td class="py-3 px-4">
+                        <div class="flex items-center">
+                            <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded mr-4">
+                            <div>
+                                <div class="font-medium" style="color: var(--text);">${product.name}</div>
+                                <div class="text-sm" style="color: var(--text);">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
+                            </div>
                         </div>
-                        <button class="px-6 py-2 rounded-lg transition" style="background-color: var(--gold); color: var(--dark);">
-                            Add All to Cart
-                        </button>
-                    </div>
-                `;
-                wishlistContent.innerHTML = wishlistHTML;
-            }
-            document.getElementById('wishlistModal').classList.remove('hidden');
-        }
+                    </td>
+                    <td class="py-3 px-4 font-bold" style="color: var(--gold);">$${product.price}</td>
+                    <td class="py-3 px-4">
+                        <div class="flex items-center">
+                            <div class="flex mr-2">
+                                ${generateStars(product.rating)}
+                            </div>
+                            <span class="text-sm" style="color: var(--text);">(${product.reviews})</span>
+                        </div>
+                    </td>
+                    <td class="py-3 px-4">
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 rounded text-sm transition" style="background-color: var(--gold); color: var(--dark);"
+                                    onclick="openProductModal(${product.id}); closeWishlistModal();">
+                                View
+                            </button>
+                            <button class="remove-from-wishlist px-3 py-1 rounded text-sm transition" style="background-color: var(--gold); color: var(--dark);"
+                                    data-product-id="${product.id}">
+                                Remove
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+        });
+        wishlistHTML += `
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-6 flex justify-between items-center">
+                <div class="text-lg" style="color: var(--text);">
+                    Total: <span class="font-bold">$${wishlist.reduce((sum, product) => sum + product.price, 0)}</span>
+                </div>
+                <button class="px-6 py-2 rounded-lg transition" style="background-color: var(--gold); color: var(--dark);">
+                    Add All to Cart
+                </button>
+            </div>
+        `;
+        wishlistContent.innerHTML = wishlistHTML;
+        
+        // Add event listeners to remove buttons
+        document.querySelectorAll('.remove-from-wishlist').forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = parseInt(this.getAttribute('data-product-id'));
+                toggleWishlist(productId);
+                openWishlistModal(); // Refresh the modal
+            });
+        });
+    }
+    document.getElementById('wishlistModal').classList.remove('hidden');
+}
         
         // Close wishlist modal
         function closeWishlistModal() {
